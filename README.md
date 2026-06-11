@@ -25,6 +25,42 @@ loss), which is what the Monte Carlo simulation consumes. Full rationale in
 **Top 5 title contenders (final model, 10,000 sims):** Argentina 6.6% · France
 5.2% · Spain 5.1% · England 5.1% · Mexico 5.1%.
 
+## Results & visuals
+
+All graphics below are generated from real project outputs by
+`src/linkedin_visuals.py` (300 DPI). Footer label: *"Final model:
+ExtraTreesClassifier + sigmoid calibration."*
+
+### 1. Champion probabilities
+
+![World Cup 2026 champion probabilities — top 15](outputs/final_linkedin_visuals/champion_probabilities_top15.png)
+
+### 2. Full decision-tree bracket
+
+> *Illustrative simulation scenario based on model outputs — not a deterministic prediction.*
+
+![Full 32-team decision-tree bracket](outputs/final_linkedin_visuals/full_decision_tree_bracket.png)
+
+### 3. Group-stage match predictions
+
+Full 3-way probability distribution per fixture (red = home win, gray = draw,
+gold = away win); the model's favored side is flagged with a gold star.
+
+![Group-stage match cards, groups A–F](outputs/final_linkedin_visuals/group_stage_match_cards_A_F.png)
+
+![Group-stage match cards, groups G–L](outputs/final_linkedin_visuals/group_stage_match_cards_G_L.png)
+
+### 4. Why data validation matters (the Unicode bug)
+
+![Validation bug-fix story](outputs/final_linkedin_visuals/validation_bug_fix.png)
+
+### 5. Pipeline overview
+
+![From raw data to champion odds — pipeline](outputs/final_linkedin_visuals/pipeline_summary.png)
+
+> Regenerate everything with `python -m src.finalize` (writes to
+> `outputs/final_linkedin_visuals/`).
+
 ## Project structure
 
 ```
