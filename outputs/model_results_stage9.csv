@@ -1,0 +1,13 @@
+model,class_weight,calibrated,accuracy,macro_f1,log_loss,draw_recall,best_params,is_best_stage9
+HistGB(balanced)+sigmoid,n/a,True,0.5859,0.4284,1.5524,0.0053,"sigmoid, TimeSeriesSplit(3)",True
+HistGB(None)+sigmoid,n/a,True,0.5875,0.4297,1.6159,0.0027,"sigmoid, TimeSeriesSplit(3)",False
+HistGB(balanced)+isotonic,n/a,True,0.5844,0.4287,1.6164,0.008,"isotonic, TimeSeriesSplit(3)",False
+ExtraTrees+sigmoid,n/a,True,0.6024,0.4567,1.6411,0.024,"sigmoid, TimeSeriesSplit(3)",False
+ExtraTrees,None,False,0.5984,0.4474,1.6933,0.0147,"{'class_weight': None, 'max_depth': 20, 'min_samples_leaf': 3}",False
+HistGB(cw-exp),balanced,False,0.5646,0.5283,1.6963,0.332,"learning_rate=0.1, max_iter=400",False
+HistGradientBoosting,None,False,0.5936,0.4397,1.7024,0.0067,"{'class_weight': None, 'learning_rate': 0.05, 'max_leaf_nodes': 31}",False
+HistGB(None)+isotonic,n/a,True,0.5872,0.43,1.7059,0.004,"isotonic, TimeSeriesSplit(3)",False
+HistGB(cw-exp),None,False,0.5957,0.4527,1.7727,0.024,"learning_rate=0.1, max_iter=400",False
+RandomForest(tuned),None,False,0.5981,0.4545,1.7739,0.0253,"{'class_weight': None, 'max_depth': None, 'min_samples_leaf': 8}",False
+GradientBoosting,n/a,False,0.5999,0.4516,1.7868,0.0187,"{'learning_rate': 0.05, 'max_depth': 2}",False
+ExtraTrees+isotonic,n/a,True,0.603,0.4469,2.5034,0.0067,"isotonic, TimeSeriesSplit(3)",False
