@@ -1,0 +1,18 @@
+# Core data stack (Stage 1)
+pandas==2.3.3
+numpy==2.0.2
+pyarrow==21.0.0
+
+# Modeling (Stage 3)
+scikit-learn==1.6.1
+joblib==1.5.3
+matplotlib==3.9.4
+
+# Notebook execution / EDA
+jupyter==1.1.1
+ipykernel==6.31.0
+
+# Reserved for later stages (uncomment when needed):
+# xgboost
+# lightgbm
+# seaborn
