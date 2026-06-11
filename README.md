@@ -22,14 +22,15 @@ loss), which is what the Monte Carlo simulation consumes. Full rationale in
 [`report/final_model_summary.md`](report/final_model_summary.md) and
 [`report/final_project_summary.md`](report/final_project_summary.md).
 
-**Top 5 title contenders (final model, 10,000 sims):** Argentina 6.6% · France
-5.2% · Spain 5.1% · England 5.1% · Mexico 5.1%.
+**Top 5 title contenders (final model, 10,000 sims):** Argentina 6.3% · France
+5.4% · Spain 5.3% · England 5.3% · Brazil 4.9%.
 
 ## Results & visuals
 
 All graphics below are generated from real project outputs by
 `src/linkedin_visuals.py` (300 DPI). Footer label: *"Final model:
-ExtraTreesClassifier + sigmoid calibration."*
+ExtraTreesClassifier + sigmoid calibration."* Group-stage cards use the
+**official FIFA 2026 A–L group letters** (mapped via each group's Pot 1 seed).
 
 ### 1. Champion probabilities
 
@@ -230,7 +231,8 @@ Stage 4 fixture probabilities and estimates per-team group-winner, advancement,
 round-reach, and champion probabilities.
 
 - **Groups** are reconstructed from the fixture pairings (connected components):
-  12 groups of 4.
+  12 groups of 4, then labelled with the **official FIFA A–L letters** by
+  matching each group to its Pot 1 seed (`config.OFFICIAL_GROUP_SEEDS`).
 - **Group stage**: each of the 72 fixtures is sampled directly from its predicted
   `[P_home_win, P_draw, P_away_win]` (win = 3 pts, draw = 1, loss = 0).
 - **Ranking**: points → goal-difference *approximation* (+1 win / 0 draw /
