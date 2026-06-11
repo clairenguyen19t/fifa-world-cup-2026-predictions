@@ -97,6 +97,25 @@ POINTS_LOSS: int = 0
 # Number of best third-placed teams that advance (WC 2026 format).
 N_BEST_THIRDS: int = 8
 
+# Official FIFA 2026 group letters, keyed by each group's Pot 1 seed team. Groups
+# are reconstructed from fixture pairings; this maps each cluster to its real
+# A-L letter (every group contains exactly one Pot 1 seed). Falls back to
+# alphabetical labelling if a seed is missing.
+OFFICIAL_GROUP_SEEDS: dict[str, str] = {
+    "Mexico": "A",
+    "Canada": "B",
+    "Brazil": "C",
+    "United States": "D",
+    "Germany": "E",
+    "Netherlands": "F",
+    "Belgium": "G",
+    "Spain": "H",
+    "France": "I",
+    "Argentina": "J",
+    "Portugal": "K",
+    "England": "L",
+}
+
 # --------------------------------------------------------------------------- #
 # Feature-engineering constants
 # --------------------------------------------------------------------------- #

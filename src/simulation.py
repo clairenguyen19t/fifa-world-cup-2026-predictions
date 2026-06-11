@@ -71,10 +71,27 @@ def build_setup(preds: pd.DataFrame) -> dict:
     """
     edges = list(zip(preds["home_team"], preds["away_team"]))
     comps = _connected_components(edges)
-    # Deterministic group order/labels: sort groups by their alphabetically
-    # first team, label A, B, C, ...
-    comps_sorted = sorted(comps, key=lambda c: sorted(c)[0])
-    group_labels = [chr(ord("A") + i) for i in range(len(comps_sorted))]
+
+    # Prefer the official FIFA A-L letters: each group is labelled by the Pot 1
+    # seed it contains. If every group resolves to a unique official letter we
+    # order groups A..L by that letter; otherwise fall back to deterministic
+    # alphabetical labelling (by each group's first team).
+    seeds = config.OFFICIAL_GROUP_SEEDS
+
+    def _official_label(comp: set[str]) -> str | None:
+        for t in comp:
+            if t in seeds:
+                return seeds[t]
+        return None
+
+    labels = [_official_label(c) for c in comps]
+    if len(set(labels)) == len(comps) and None not in labels:
+        paired = sorted(zip(labels, comps), key=lambda x: x[0])
+        group_labels = [lab for lab, _ in paired]
+        comps_sorted = [c for _, c in paired]
+    else:
+        comps_sorted = sorted(comps, key=lambda c: sorted(c)[0])
+        group_labels = [chr(ord("A") + i) for i in range(len(comps_sorted))]
 
     teams: list[str] = []
     team_group: dict[str, str] = {}

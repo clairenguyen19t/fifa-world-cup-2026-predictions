@@ -75,21 +75,21 @@ and public presentation value.
 ## 11. Top 15 champion probabilities (final model)
 | Rank | Team | Group | Champion prob |
 |---:|---|:---:|---:|
-| 1 | Argentina | A | 6.58% |
-| 2 | France | K | 5.16% |
-| 3 | Spain | F | 5.08% |
-| 4 | England | H | 5.05% |
-| 5 | Mexico | J | 5.05% |
-| 6 | Belgium | C | 4.76% |
-| 7 | Canada | D | 4.75% |
-| 8 | Brazil | E | 4.62% |
-| 9 | Ecuador | I | 4.60% |
-| 10 | Portugal | G | 4.45% |
-| 11 | Germany | I | 4.39% |
-| 12 | Netherlands | L | 4.20% |
-| 13 | Switzerland | D | 4.04% |
-| 14 | Croatia | H | 3.70% |
-| 15 | Colombia | G | 3.60% |
+| 1 | Argentina | J | 6.30% |
+| 2 | France | I | 5.38% |
+| 3 | Spain | H | 5.34% |
+| 4 | England | L | 5.27% |
+| 5 | Brazil | C | 4.91% |
+| 6 | Belgium | G | 4.81% |
+| 7 | Mexico | A | 4.66% |
+| 8 | Canada | B | 4.64% |
+| 9 | Portugal | K | 4.60% |
+| 10 | Ecuador | E | 4.36% |
+| 11 | Netherlands | F | 4.22% |
+| 12 | Colombia | K | 3.87% |
+| 13 | Switzerland | B | 3.85% |
+| 14 | Germany | E | 3.67% |
+| 15 | Turkey | D | 3.54% |
 
 ## 12. Major limitations
 - All models sit above the uniform-guess log loss (~1.099): international results
